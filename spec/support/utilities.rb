@@ -10,14 +10,11 @@
 include ApplicationHelper
 
 def valid_signin(user)
+  visit signin_path
   fill_in "Email",    with: user.email
   fill_in "Password", with: user.password
   click_button "Sign In"
-  
-  it { should have_selector('title', text: user.name) }
-  it { should have_link('Profile', href: user_path(user)) }
-  it { should have_link('Sign Out', href: signout_path) }
-  it { should_not have_link('Sign In', href: signin_path) }
+  cookies[:remember_token] = user.remember_token
 end
 
 def invalid_signin

@@ -1,8 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+#sass (Sassy CSS) to create nice layout from pre-defined div
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
+#faker to create sample good user automatically to the database
+gem 'faker', '1.0.1'
+#paginate to create pagination on the page
+gem 'will_paginate', '3.0.3'
+#bootstrap paginate to provide css layout for pagination
+gem 'bootstrap-will_paginate', '0.0.6'
 gem 'pg', '0.12.2'
 
 group :development, :test do
@@ -11,6 +18,7 @@ group :development, :test do
   gem 'guard-rspec', '1.2.1'
   gem 'guard-spork', '1.2.0'
   gem 'childprocess', '0.3.9'
+#spork for testing purpose
   gem 'spork', '0.9.2'
   gem 'annotate', '2.5.0'
 end
@@ -30,7 +38,9 @@ group :test do
   gem 'rb-fchange', '0.0.5'
   gem 'rb-notifu', '0.0.4'
   gem 'win32console', '1.3.0'
+#factory_girls to create 'User Model Object' automatically each time we create user
   gem 'factory_girl_rails', '4.1.0'
+#cucumber to create testing with humanized language
   gem 'cucumber-rails', '1.2.1', :require => false
   gem 'database_cleaner', '0.7.0'
 end
