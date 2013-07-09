@@ -28,6 +28,9 @@ describe "Micropost pages" do
       it "should create a micropost" do
         expect { click_button "Post" }.to change(Micropost, :count).by(1)
       end
+
+      #it "should count micropost" do
+
     end
   end
 
