@@ -31,7 +31,7 @@ module SessionsHelper
     def sign_out    
         #User.all.each { |user| user.save(validate: false) }
         self.current_user = nil
-        cookies.delete[:remember_token]
+        cookies.delete(:remember_token)
     end
     
     def redirect_back_or(default)
